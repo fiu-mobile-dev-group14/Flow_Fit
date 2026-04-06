@@ -274,6 +274,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				"OTHER_SWIFT_FLAGS[arch=*]" = "-DAPI_KEY=\"sk-ant-yourkey\"";
 				PRODUCT_BUNDLE_IDENTIFIER = Vincent.FlowFit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
