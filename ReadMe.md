@@ -44,6 +44,13 @@ FlowFit is built for everyone—from beginners just starting their fitness journ
 - [ ] Polish UI + constraints
 - [ ] Prepare Unit 8 demo build
 
+## Video Walkthrough
+
+https://www.loom.com/share/9491f04e67d34a538764fe312807c2fb
+
+[![Loom Video](https://cdn.loom.com/sessions/thumbnails/9491f04e67d34a538764fe312807c2fb-with-play.gif)](https://www.loom.com/share/9491f04e67d34a538764fe312807c2fb)
+
+
 #### Required Must‑have Stories
 
 - User can create an account and log in.
