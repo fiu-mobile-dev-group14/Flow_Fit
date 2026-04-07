@@ -12,17 +12,55 @@ struct ContentView: View {
 
     var body: some View {
         TabView {
-            WorkoutTrackerView(store: workoutStore)
+            NavigationStack {
+                Text("Home Screen")
+                    .font(.title2)
+                    .foregroundColor(.secondary)
+                    .navigationTitle("Home")
+            }
+            .tabItem {
+                Image(systemName: "house")
+                Text("Home")
+            }
+
+            NavigationStack {
+                Text("Nutrition Screen")
+                    .font(.title2)
+                    .foregroundColor(.secondary)
+                    .navigationTitle("Nutrition")
+            }
+            .tabItem {
+                Image(systemName: "leaf")
+                Text("Nutrition")
+            }
+
+            WorkoutsView(store: workoutStore)
                 .tabItem {
-                    Image(systemName: "figure.walk")
-                    Text("Track")
+                    Image(systemName: "dumbbell")
+                    Text("Workouts")
                 }
 
-            WorkoutSuggestionsView()
-                .tabItem {
-                    Image(systemName: "sparkles")
-                    Text("Flow")
-                }
+            NavigationStack {
+                Text("Progress Screen")
+                    .font(.title2)
+                    .foregroundColor(.secondary)
+                    .navigationTitle("Progress")
+            }
+            .tabItem {
+                Image(systemName: "chart.bar")
+                Text("Progress")
+            }
+
+            NavigationStack {
+                Text("Profile Screen")
+                    .font(.title2)
+                    .foregroundColor(.secondary)
+                    .navigationTitle("Profile")
+            }
+            .tabItem {
+                Image(systemName: "person")
+                Text("Profile")
+            }
         }
         .tint(.blue)
     }
