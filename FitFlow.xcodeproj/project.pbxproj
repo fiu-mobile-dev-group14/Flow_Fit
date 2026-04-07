@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		D58C27D92F84B54F0047B42B /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = D58C27D82F84B5430047B42B /* README.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		D54F8FC82F7DF8580094AD9D /* FitFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D58C27D82F84B5430047B42B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +37,7 @@
 		D54F8FBF2F7DF8580094AD9D = {
 			isa = PBXGroup;
 			children = (
+				D58C27D82F84B5430047B42B /* README.md */,
 				D54F8FCA2F7DF8580094AD9D /* FitFlow */,
 				D54F8FC92F7DF8580094AD9D /* Products */,
 			);
@@ -119,6 +125,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D58C27D92F84B54F0047B42B /* README.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
