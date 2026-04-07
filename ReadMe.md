@@ -35,7 +35,28 @@ FlowFit is built for everyone—from beginners just starting their fitness journ
 
 ## Product Spec
 
-### 1. User Stories (Required and Optional)
+### 1. Sprint 1 User Stories
+- [x] Set up Xcode project + navigation
+- [ ] Build Home Screen UI
+- [ ] Implement data model
+- [ ] Build Detail Screen
+- [ ] Add persistence
+- [ ] Polish UI + constraints
+- [ ] Prepare Unit 8 demo build
+
+## Video Walkthrough
+
+https://www.loom.com/share/9491f04e67d34a538764fe312807c2fb
+[![Loom Video](https://cdn.loom.com/sessions/thumbnails/9491f04e67d34a538764fe312807c2fb-with-play.gif)](https://www.loom.com/share/9491f04e67d34a538764fe312807c2fb)
+<div>
+    <a href="https://www.loom.com/share/9491f04e67d34a538764fe312807c2fb">
+      <p>fiu-mobile-dev-group14/Flow_Fit - 6 April 2026 - Watch Video</p>
+    </a>
+    <a href="https://www.loom.com/share/9491f04e67d34a538764fe312807c2fb">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/9491f04e67d34a538764fe312807c2fb-10ad76eb12c0a10d-full-play.gif#t=0.1">
+    </a>
+  </div>
+
 
 #### Required Must‑have Stories
 
