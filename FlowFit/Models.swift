@@ -12,6 +12,14 @@ struct User {
     var username: String
     var goal: FitnessGoal                   // Determines meal and workout suggestions
     var experienceLevel: ExperienceLevel    // Determines workout suggestions
+    
+    var calorieTarget: Int {
+        switch goal {
+        case .cut:      return 1600
+        case .maintain: return 2000
+        case .bulk:     return 2600
+        }
+    }    
 }
 
 enum FitnessGoal: String, CaseIterable, Identifiable {
@@ -68,6 +76,50 @@ struct WorkoutEntry: Identifiable, Codable {
     var notes: String
     var date: Date
     
+    init(
+        id: UUID = UUID(),
+        exerciseName: String,
+        sets: Int = 0,
+        reps: Int = 0,
+        weight: Double = 0,
+        duration: Int = 0,
+        notes: String = "",
+        date: Date = Date()
+    ) {
+        self.id = id
+        self.exerciseName = exerciseName
+        self.sets = sets
+        self.reps = reps
+        self.weight = weight
+        self.duration = duration
+        self.notes = notes
+        self.date = date
+    }
+}
+
+struct SuggestedWorkout: Identifiable, Codable {
+    let id: UUID
+    var name: String
+    var difficulty: String
+    var focus: String
+    var description: String
+    var imageName: String
+
+    init(
+        id: UUID = UUID(),
+        name: String,
+        difficulty: String,
+        focus: String,
+        description: String,
+        imageName: String
+    ) {
+        self.id = id
+        self.name = name
+        self.difficulty = difficulty
+        self.focus = focus
+        self.description = description
+        self.imageName = imageName
+    }
 }
 
 // MARK: - AI Suggestion Models

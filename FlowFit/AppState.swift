@@ -38,11 +38,19 @@ class AppState {
     var mealSuggestions: [MealSuggestion] = []
     var workoutSuggestions: [WorkoutSuggestion] = []
     var isFetchingSuggestions: Bool = false
+    var lastSuggestionFetch: Date? = nil
  
     // MARK: - Streak / Progress
     var currentStreak: Int = 3
     // TODO: placeholder; Progress will compute this from history
  
+    // MARK: - Init
+    init() {
+        Task {
+            await RecommendationsService.shared.loadCachedSuggestions(for: self)
+        }
+    }
+    
     // MARK: - Helper Methods
     func logMeal(_ meal: MealEntry) {
         todayMeals.append(meal)
@@ -58,5 +66,8 @@ class AppState {
         todayWorkouts = []
         mealSuggestions = []
         workoutSuggestions = []
+        lastSuggestionFetch = nil
+        // Clear cached suggestions so next user gets fresh ones
+        Task { await SuggestionsCache.shared.clear() }
     }
 }

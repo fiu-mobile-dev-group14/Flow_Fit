@@ -8,47 +8,55 @@
 import SwiftUI
 
 struct ContentView: View {
-    
     @Environment(AppState.self) var appState
     
     var body: some View {
-        
+        if appState.isLoggedIn {
+            MainTabView()
+        } else {
+            LoginPlaceholderView()
+        }
     }
 }
 
 // MARK: - Main Tab Bar
 struct MainTabView: View {
+    
+    @Environment(AppState.self) var appState
+    @EnvironmentObject var workoutStore: WorkoutStore
+    
+    @State private var selectedTab = 0
+    
     var body: some View {
-        TabView {
+        TabView(selection: $selectedTab) {
             // Dashboard
-            HomeView()
+            HomeView(selectedTab: $selectedTab)
                 .tabItem {
                     Label("Home", systemImage: "house.fill")
-                }
+                }.tag(0)
  
             // NUTRITION
             NutritionPlaceholderView()
                 .tabItem {
                     Label("Nutrition", systemImage: "fork.knife")
-                }
+                }.tag(1)
  
             // WORKOUTS
-            WorkoutsPlaceholderView()
-                .tabItem {
-                    Label("Workouts", systemImage: "dumbbell.fill")
-                }
+            WorkoutsView(store: workoutStore)
+                .tabItem { Label("Workouts", systemImage: "dumbbell.fill")
+                }.tag(2)
  
             // PROGRESS
             ProgressPlaceholderView()
                 .tabItem {
                     Label("Progress", systemImage: "chart.line.uptrend.xyaxis")
-                }
+                }.tag(3)
  
             // PROFILE
             ProfilePlaceholderView()
                 .tabItem {
                     Label("Profile", systemImage: "person.fill")
-                }
+                }.tag(4)
         }
         .tint(.blue)
     }
@@ -111,4 +119,5 @@ struct ProfilePlaceholderView: View {
 #Preview {
     ContentView()
         .environment(AppState())
+        .environmentObject(WorkoutStore())
 }

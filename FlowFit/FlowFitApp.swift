@@ -11,6 +11,7 @@ import SwiftUI
 struct FlowFitApp: App {
     
     @State private var appState: AppState
+    @StateObject private var workoutStore = WorkoutStore()
     
     init() {
         // FirebaseApp.configure()
@@ -22,6 +23,7 @@ struct FlowFitApp: App {
             if appState.isLoggedIn {
                 ContentView()
                     .environment(appState)
+                    .environmentObject(workoutStore)
             } else {
                 /*
                  LoginView()
