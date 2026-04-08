@@ -34,7 +34,6 @@ FlowFit is built for everyone—from beginners just starting their fitness journ
 ---
 
 ## Product Spec
-
 ### 1. Sprint 1 User Stories
 - [x] Set up Xcode project + navigation
 - [ ] Build Home Screen UI
@@ -43,6 +42,21 @@ FlowFit is built for everyone—from beginners just starting their fitness journ
 - [ ] Add persistence
 - [ ] Polish UI + constraints
 - [ ] Prepare Unit 8 demo build
+### 2. Sprint 2 – User Stories
+- [x] Build Home Screen UI
+- [x] Implement data model
+- [x] Build Detail Screen
+- [x] Add persistence
+- [x] Polish UI + constraints
+- [x] Prepare Unit 8 demo build
+### 3. Sprint 3 – User Stories
+- [x] Add App Icon
+- [x] Polish UI + corrections
+- [x] Implement data improvements
+- [ ] Add onboarding / welcome flow
+- [ ] Add loading & error states
+- [ ] Add accessibility improvements
+
 
 ## Video Walkthrough
 
