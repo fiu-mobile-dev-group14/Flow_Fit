@@ -1,4 +1,4 @@
-# FlowFi
+# FlowFit
 
 ## Table of Contents
 - Overview
