@@ -36,7 +36,7 @@ struct MainTabView: View {
                 }.tag(0)
  
             // NUTRITION
-            NutritionPlaceholderView()
+            NutritionView()
                 .tabItem {
                     Label("Nutrition", systemImage: "fork.knife")
                 }.tag(1)

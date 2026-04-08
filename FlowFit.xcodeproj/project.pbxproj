@@ -3,15 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 90;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF90AA062F869C4100E296E8 /* NutritionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF90AA052F869C4100E296E8 /* NutritionView.swift */; };
+		BF90AA082F86AE5800E296E8 /* LogMealFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF90AA072F86AE5800E296E8 /* LogMealFormView.swift */; };
 		BFF028502F7E1B1D00FDE93A /* ReadMe.md in Sources */ = {isa = PBXBuildFile; fileRef = BFF0284F2F7E1B0400FDE93A /* ReadMe.md */; };
 		BFF028522F7E1BEC00FDE93A /* brainstorming.md in Resources */ = {isa = PBXBuildFile; fileRef = BFF028512F7E1BC600FDE93A /* brainstorming.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF90AA052F869C4100E296E8 /* NutritionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionView.swift; sourceTree = "<group>"; };
+		BF90AA072F86AE5800E296E8 /* LogMealFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogMealFormView.swift; sourceTree = "<group>"; };
 		BFF028412F7E19F200FDE93A /* FlowFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFF0284F2F7E1B0400FDE93A /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
 		BFF028512F7E1BC600FDE93A /* brainstorming.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = brainstorming.md; sourceTree = "<group>"; };
@@ -41,10 +45,8 @@
 /* Begin PBXFrameworksBuildPhase section */
 		BFF0283E2F7E19F200FDE93A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
@@ -52,6 +54,8 @@
 		BFF028382F7E19F200FDE93A = {
 			isa = PBXGroup;
 			children = (
+				BF90AA052F869C4100E296E8 /* NutritionView.swift */,
+				BF90AA072F86AE5800E296E8 /* LogMealFormView.swift */,
 				BFF0284F2F7E1B0400FDE93A /* ReadMe.md */,
 				BFF028512F7E1BC600FDE93A /* brainstorming.md */,
 				BFF028432F7E19F200FDE93A /* FlowFit */,
@@ -80,14 +84,10 @@
 			);
 			buildRules = (
 			);
-			dependencies = (
-			);
 			fileSystemSynchronizedGroups = (
 				BFF028432F7E19F200FDE93A /* FlowFit */,
 			);
 			name = FlowFit;
-			packageProductDependencies = (
-			);
 			productName = FlowFit;
 			productReference = BFF028412F7E19F200FDE93A /* FlowFit.app */;
 			productType = "com.apple.product-type.application";
@@ -116,7 +116,7 @@
 			);
 			mainGroup = BFF028382F7E19F200FDE93A;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
+			preferredProjectObjectVersion = 90;
 			productRefGroup = BFF028422F7E19F200FDE93A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -129,27 +129,25 @@
 /* Begin PBXResourcesBuildPhase section */
 		BFF0283F2F7E19F200FDE93A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				BFF028522F7E1BEC00FDE93A /* brainstorming.md in Resources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BFF0283D2F7E19F200FDE93A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
+				BF90AA062F869C4100E296E8 /* NutritionView.swift in Sources */,
 				BFF028502F7E1B1D00FDE93A /* ReadMe.md in Sources */,
+				BF90AA082F86AE5800E296E8 /* LogMealFormView.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		BFF0284A2F7E19F300FDE93A /* Debug */ = {
+		BFF0284A2F7E19F300FDE93A /* Debug configuration for PBXProject "FlowFit" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -201,7 +199,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -212,7 +210,7 @@
 			};
 			name = Debug;
 		};
-		BFF0284B2F7E19F300FDE93A /* Release */ = {
+		BFF0284B2F7E19F300FDE93A /* Release configuration for PBXProject "FlowFit" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -258,7 +256,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -268,7 +266,7 @@
 			};
 			name = Release;
 		};
-		BFF0284D2F7E19F300FDE93A /* Debug */ = {
+		BFF0284D2F7E19F300FDE93A /* Debug configuration for PBXNativeTarget "FlowFit" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -283,6 +281,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -301,7 +300,7 @@
 			};
 			name = Debug;
 		};
-		BFF0284E2F7E19F300FDE93A /* Release */ = {
+		BFF0284E2F7E19F300FDE93A /* Release configuration for PBXNativeTarget "FlowFit" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -316,6 +315,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,19 +339,17 @@
 		BFF0283C2F7E19F200FDE93A /* Build configuration list for PBXProject "FlowFit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BFF0284A2F7E19F300FDE93A /* Debug */,
-				BFF0284B2F7E19F300FDE93A /* Release */,
+				BFF0284A2F7E19F300FDE93A /* Debug configuration for PBXProject "FlowFit" */,
+				BFF0284B2F7E19F300FDE93A /* Release configuration for PBXProject "FlowFit" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		BFF0284C2F7E19F300FDE93A /* Build configuration list for PBXNativeTarget "FlowFit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BFF0284D2F7E19F300FDE93A /* Debug */,
-				BFF0284E2F7E19F300FDE93A /* Release */,
+				BFF0284D2F7E19F300FDE93A /* Debug configuration for PBXNativeTarget "FlowFit" */,
+				BFF0284E2F7E19F300FDE93A /* Release configuration for PBXNativeTarget "FlowFit" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
