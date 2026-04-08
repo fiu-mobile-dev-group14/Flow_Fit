@@ -14,7 +14,7 @@ struct ContentView: View {
         if appState.isLoggedIn {
             MainTabView()
         } else {
-            LoginPlaceholderView()
+            LoginView()
         }
     }
 }
@@ -47,16 +47,18 @@ struct MainTabView: View {
                 }.tag(2)
  
             // PROGRESS
-            ProgressPlaceholderView()
+            ProgressView()
                 .tabItem {
                     Label("Progress", systemImage: "chart.line.uptrend.xyaxis")
-                }.tag(3)
+                }
+                .tag(3)
  
             // PROFILE
-            ProfilePlaceholderView()
+            UseProfile()
                 .tabItem {
                     Label("Profile", systemImage: "person.fill")
-                }.tag(4)
+                }
+                .tag(4)
         }
         .tint(.blue)
     }

@@ -127,6 +127,24 @@ struct NutritionView: View {
                                         detail: meal.description,
                                         color: .green
                                     )
+                                    Button {
+                                        let entry = MealEntry(
+                                            name: meal.name,
+                                            calories: meal.estimatedCalories,
+                                            notes: "Added from AI suggestion",
+                                            goal: appState.currentUser?.goal.rawValue ?? ""
+                                        )
+                                        appState.logMeal(entry)
+                                    } label: {
+                                        Label("Add to Today's Meals", systemImage: "plus.circle.fill")
+                                            .font(.caption)
+                                            .frame(maxWidth: .infinity)
+                                            .padding(8)
+                                            .background(Color.green.opacity(0.12))
+                                            .foregroundColor(.green)
+                                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                                    }
+                                    .buttonStyle(.plain)
                                 }
                             }
                         }

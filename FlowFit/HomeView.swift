@@ -341,6 +341,55 @@ struct SuggestionCard: View {
     }
 }
  
+// Quick Actions
+struct QuickActionsSection: View {
+    @Binding var showingSuggestions: Bool
+    @Binding var selectedTab: Int
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("Quick Actions")
+                .font(.headline)
+
+            HStack(spacing: 12) {
+                QuickActionButton(title: "Log Meal", icon: "plus.circle.fill", color: .green) {
+                    selectedTab = 1
+                }
+                QuickActionButton(title: "Log Workout", icon: "plus.circle.fill", color: .blue) {
+                    selectedTab = 2
+                }
+                QuickActionButton(title: "Get Ideas", icon: "sparkles", color: .purple) {
+                    showingSuggestions = true
+                }
+            }
+        }
+    }
+}
+
+struct QuickActionButton: View {
+    let title: String
+    let icon: String
+    let color: Color
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            VStack(spacing: 6) {
+                Image(systemName: icon)
+                    .font(.title2)
+                    .foregroundStyle(color)
+                Text(title)
+                    .font(.caption)
+                    .multilineTextAlignment(.center)
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 14)
+            .background(.regularMaterial)
+            .clipShape(RoundedRectangle(cornerRadius: 14))
+        }
+        .buttonStyle(.plain)
+    }
+}
 
 #Preview {
     HomeView(selectedTab: .constant(0))

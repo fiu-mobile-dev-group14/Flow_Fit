@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct WorkoutsView: View {
+    @Environment(AppState.self) var appState
     @ObservedObject var store: WorkoutStore
 
     @State private var exerciseName = ""
@@ -151,44 +152,102 @@ struct WorkoutsView: View {
 
     private var suggestedWorkoutsSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            sectionTitle("Suggested Workouts")
+            sectionTitle("AI Suggested Workouts")
 
-            Picker("Experience", selection: $selectedExperience) {
-                ForEach(experiences, id: \.self) { level in
-                    Text(level)
+            if appState.isFetchingSuggestions {
+                HStack {
+                    ProgressView()
+                    Text("Getting personalized suggestions…")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
                 }
-            }
-            .pickerStyle(.segmented)
+                .padding()
+                .frame(maxWidth: .infinity, minHeight: 200, alignment: .leading)
+                .background(Color(.secondarySystemGroupedBackground))
+                .cornerRadius(14)
 
-            ForEach(WorkoutSuggestionEngine.suggestions(for: selectedExperience)) { workout in
-                NavigationLink(destination: WorkoutDetailView(workout: workout)) {
-                    VStack(alignment: .leading, spacing: 6) {
-                        HStack {
-                            Text(workout.name)
-                                .font(.headline)
+            } else if appState.workoutSuggestions.isEmpty {
+                VStack(spacing: 8) {
+                    Image(systemName: "sparkles")
+                        .font(.title)
+                        .foregroundColor(.blue)
+                    Text("Go to Home and tap \"Get Ideas\" to get AI workout suggestions.")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                        .multilineTextAlignment(.center)
+                }
+                .padding()
+                .frame(maxWidth: .infinity)
+                .background(Color(.secondarySystemGroupedBackground))
+                .cornerRadius(14)
 
-                            Spacer()
+            } else {
+                ForEach(appState.workoutSuggestions) { suggestion in
+                    VStack(spacing: 6) {
+                        NavigationLink(destination: WorkoutDetailView(workout: SuggestedWorkout(
+                            name: suggestion.name,
+                            difficulty: suggestion.difficulty,
+                            focus: suggestion.focus,
+                            description: suggestion.description
+                        ))) {
+                            VStack(alignment: .leading, spacing: 6) {
+                                HStack {
+                                    Text(suggestion.name)
+                                        .font(.headline)
+                                    Spacer()
+                                    Text(suggestion.difficulty)
+                                        .font(.caption)
+                                        .padding(.horizontal, 10)
+                                        .padding(.vertical, 4)
+                                        .background(Color.blue.opacity(0.12))
+                                        .foregroundColor(.blue)
+                                        .cornerRadius(10)
+                                }
+                                Text(suggestion.focus)
+                                    .font(.subheadline)
+                                    .foregroundColor(.secondary)
+                                Text(suggestion.description)
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
+                            .padding()
+                            .background(Color(.secondarySystemGroupedBackground))
+                            .cornerRadius(14)
+                        }
+                        .buttonStyle(.plain)
 
-                            Text(workout.difficulty)
+                        Button {
+                            store.addWorkout(
+                                exerciseName: suggestion.name,
+                                sets: 0,
+                                reps: 0,
+                                weight: 0,
+                                duration: 0,
+                                notes: "Added from AI suggestion: \(suggestion.description)"
+                            )
+                        } label: {
+                            Label("Add to Today's Workouts", systemImage: "plus.circle.fill")
                                 .font(.caption)
-                                .padding(.horizontal, 10)
-                                .padding(.vertical, 4)
+                                .frame(maxWidth: .infinity)
+                                .padding(8)
                                 .background(Color.blue.opacity(0.12))
                                 .foregroundColor(.blue)
-                                .cornerRadius(10)
+                                .clipShape(RoundedRectangle(cornerRadius: 10))
                         }
-
-                        Text(workout.focus)
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
-
-                        Text(workout.description)
-                            .font(.caption)
-                            .foregroundColor(.secondary)
+                        .buttonStyle(.plain)
                     }
-                    .padding()
-                    .background(Color(.secondarySystemGroupedBackground))
-                    .cornerRadius(14)
+                }
+
+                Button {
+                    Task {
+                        await RecommendationsService.shared.fetchSuggestions(for: appState)
+                    }
+                } label: {
+                    Label("Refresh Suggestions", systemImage: "arrow.clockwise")
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color(.secondarySystemGroupedBackground))
+                        .cornerRadius(14)
                 }
                 .buttonStyle(.plain)
             }
