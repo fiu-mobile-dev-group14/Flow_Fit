@@ -10,6 +10,8 @@ import SwiftUI
 struct HomeView: View {
  
     @Environment(AppState.self) var appState
+    @EnvironmentObject var workoutStore: WorkoutStore
+    @Binding var selectedTab: Int
 
     @State private var showingSuggestions = false
  
@@ -25,7 +27,7 @@ struct HomeView: View {
                     TodaySummarySection()
  
                     // 3. Quick action buttons
-                    QuickActionsSection(showingSuggestions: $showingSuggestions)
+                    QuickActionsSection(showingSuggestions: $showingSuggestions, selectedTab: $selectedTab)
  
                     // 4. AI Recommendations preview
                     RecommendationsPreviewSection(showingSuggestions: $showingSuggestions)
@@ -75,6 +77,7 @@ struct GreetingHeaderView: View {
 // MARK: - Today's Summary
 struct TodaySummarySection: View {
     @Environment(AppState.self) var appState
+    @EnvironmentObject var workoutStore: WorkoutStore
  
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -133,6 +136,7 @@ struct SummaryCard: View {
 // MARK: - Quick Actions
 struct QuickActionsSection: View {
     @Binding var showingSuggestions: Bool
+    @Binding var selectedTab: Int
  
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -145,7 +149,7 @@ struct QuickActionsSection: View {
                     print("Navigate to log meal")
                 }
                 QuickActionButton(title: "Log Workout", icon: "plus.circle.fill", color: .blue) {
-                    print("Navigate to log workout")
+                    selectedTab = 2
                 }
                 QuickActionButton(title: "Get Ideas", icon: "sparkles", color: .purple) {
                     showingSuggestions = true
@@ -390,6 +394,7 @@ struct SuggestionCard: View {
  
 
 #Preview {
-    HomeView()
+    HomeView(selectedTab: .constant(0))
         .environment(AppState())
+        .environmentObject(WorkoutStore())
 }
