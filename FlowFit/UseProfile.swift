@@ -1,6 +1,11 @@
 import SwiftUI
 
-struct ContentView: View {
+struct UseProfile: View {
+    
+    @Environment(AppState.self) var appState
+    @EnvironmentObject var workoutStore: WorkoutStore
+    @State private var showingEditProfile = false
+    
     var body: some View {
         NavigationView {
             VStack(spacing: 20) {
@@ -13,18 +18,18 @@ struct ContentView: View {
                     .padding(.top, 30)
                 
                 // Name
-                Text("John Doe")
+                Text(appState.currentUser?.username ?? "FlowFit User")
                     .font(.title)
                     .fontWeight(.bold)
                 
-                Text("20")
+                Text(appState.currentUser?.experienceLevel.rawValue ?? "")
                     .foregroundColor(.gray)
                 // Username
-                Text("flowfit user ")
+                Text(appState.currentUser?.email ?? "")
                     .foregroundColor(.gray)
                 
                 // Bio
-                Text("Staying active and reaching goals with FlowFit.")
+                Text("Goal: \(appState.currentUser?.goal.rawValue ?? "—")")
                     .font(.body)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal)
@@ -35,7 +40,7 @@ struct ContentView: View {
                 // Stats
                 HStack(spacing: 30) {
                     VStack {
-                        Text("2 hr 30 m")
+                        Text("\(workoutStore.totalMinutes) min")
                             .font(.title2)
                             .fontWeight(.bold)
                         Text("total time")
@@ -44,7 +49,7 @@ struct ContentView: View {
                     }
                     
                     VStack {
-                        Text("1,000")
+                        Text("\(appState.totalCaloriesToday)")
                             .font(.title2)
                             .fontWeight(.bold)
                         Text("Calories")
@@ -53,7 +58,7 @@ struct ContentView: View {
                     }
                     
                     VStack {
-                        Text("8")
+                        Text("\(workoutStore.totalWorkouts)")
                             .font(.title2)
                             .fontWeight(.bold)
                         Text("Goals")
@@ -70,7 +75,7 @@ struct ContentView: View {
                 // Buttons
                 VStack(spacing: 15) {
                     Button(action: {
-                        print("Edit Profile tapped")
+                        showingEditProfile = true
                     }) {
                         Text("Edit Profile")
                             .frame(maxWidth: .infinity)
@@ -81,9 +86,9 @@ struct ContentView: View {
                     }
                     
                     Button(action: {
-                        print("Settings tapped")
+                        appState.logout()
                     }) {
-                        Text("Settings")
+                        Text("Logout")
                             .frame(maxWidth: .infinity)
                             .padding()
                             .background(Color.gray.opacity(0.2))
@@ -97,21 +102,17 @@ struct ContentView: View {
             }
             .navigationTitle("FlowFit Profile")
         }
+        .sheet(isPresented: $showingEditProfile) {
+            EditProfileSheet()
+                .environment(appState)
+        }
+        .navigationTitle("FlowFit Profile")
     }
 }
 
 #Preview {
-    ContentView()
+    UseProfile()
+        .environment(AppState())
+        .environmentObject(WorkoutStore())
     
-}
-
-import SwiftUI
-
-@main
-struct FlowFitApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-    }
 }

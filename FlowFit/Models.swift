@@ -9,9 +9,12 @@ import Foundation
 
 // MARK: - User
 struct User {
+    var uid: String                         // For Firebase
     var username: String
+    var email: String
     var goal: FitnessGoal                   // Determines meal and workout suggestions
     var experienceLevel: ExperienceLevel    // Determines workout suggestions
+    var profileImageName: String?
     
     var calorieTarget: Int {
         switch goal {
@@ -103,7 +106,7 @@ struct SuggestedWorkout: Identifiable, Codable {
     var difficulty: String
     var focus: String
     var description: String
-    var imageName: String
+    var imageName: String?
 
     init(
         id: UUID = UUID(),
@@ -111,7 +114,7 @@ struct SuggestedWorkout: Identifiable, Codable {
         difficulty: String,
         focus: String,
         description: String,
-        imageName: String
+        imageName: String? = nil
     ) {
         self.id = id
         self.name = name

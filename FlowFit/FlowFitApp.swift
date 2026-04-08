@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseCore
 
 @main
 struct FlowFitApp: App {
@@ -14,7 +15,7 @@ struct FlowFitApp: App {
     @StateObject private var workoutStore = WorkoutStore()
     
     init() {
-        // FirebaseApp.configure()
+        FirebaseApp.configure()
         appState = AppState()
     }
     
@@ -29,26 +30,9 @@ struct FlowFitApp: App {
                  LoginView()
                     .environment(appState)
                  */
-                LoginPlaceholderView()
+                LoginView()
                 //Place holder for the login view to be default if no user is logged in
             }
-        }
-    }
-}
-
-struct LoginPlaceholderView: View {
-    @Environment(AppState.self) var appState
-    var body: some View {
-        VStack(spacing: 20) {
-            Text("FlowFit")
-                .font(.largeTitle).bold()
-            Text("Login screen — coming soon")
-                .foregroundStyle(.secondary)
-            // Temp login button so you can test the dashboard without a real login flow
-            Button("Sign In (Demo)") {
-                appState.currentUser = User(username: "Demo User", goal: .cut, experienceLevel: .beginner)
-            }
-            .buttonStyle(.borderedProminent)
         }
     }
 }
