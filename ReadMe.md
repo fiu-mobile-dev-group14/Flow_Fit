@@ -71,6 +71,34 @@ https://www.loom.com/share/9491f04e67d34a538764fe312807c2fb
     </a>
   </div>
 
+## Build Progress (Unit 9)
+https://www.loom.com/share/64f913eb06d04ea8b9eea0686a8f5535
+Simulator build progress - 8 April 2026 - Watch Video
+
+
+<div>
+    <a href="https://www.loom.com/share/64f913eb06d04ea8b9eea0686a8f5535">
+      <p>Simulator build progress - 8 April 2026 - Watch Video</p>
+    </a>
+    <a href="https://www.loom.com/share/64f913eb06d04ea8b9eea0686a8f5535">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/64f913eb06d04ea8b9eea0686a8f5535-5cac0911067fb2b5-full-play.gif#t=0.1">
+    </a>
+  </div>
+
+  
+## Demo Day Prep Video
+https://www.loom.com/share/2b69bb9bc20c4b2da0abb9223c95f2c1
+Flow fit demo - Watch Video
+
+
+<div>
+    <a href="https://www.loom.com/share/2b69bb9bc20c4b2da0abb9223c95f2c1">
+      <p>Flow fit demo  - Watch Video</p>
+    </a>
+    <a href="https://www.loom.com/share/2b69bb9bc20c4b2da0abb9223c95f2c1">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/2b69bb9bc20c4b2da0abb9223c95f2c1-fde69313d16fa41f-full-play.gif#t=0.1">
+    </a>
+  </div>
 
 #### Required Must‑have Stories
 
