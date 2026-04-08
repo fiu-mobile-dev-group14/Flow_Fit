@@ -162,7 +162,7 @@ struct WorkoutsView: View {
                         .foregroundColor(.secondary)
                 }
                 .padding()
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .frame(maxWidth: .infinity, minHeight: 200, alignment: .leading)
                 .background(Color(.secondarySystemGroupedBackground))
                 .cornerRadius(14)
 
@@ -183,38 +183,59 @@ struct WorkoutsView: View {
 
             } else {
                 ForEach(appState.workoutSuggestions) { suggestion in
-                    let workout = SuggestedWorkout(
-                        name: suggestion.name,
-                        difficulty: suggestion.difficulty,
-                        focus: suggestion.focus,
-                        description: suggestion.description
-                    )
-                    NavigationLink(destination: WorkoutDetailView(workout: workout)) {
-                        VStack(alignment: .leading, spacing: 6) {
-                            HStack {
-                                Text(suggestion.name)
-                                    .font(.headline)
-                                Spacer()
-                                Text(suggestion.difficulty)
+                    VStack(spacing: 6) {
+                        NavigationLink(destination: WorkoutDetailView(workout: SuggestedWorkout(
+                            name: suggestion.name,
+                            difficulty: suggestion.difficulty,
+                            focus: suggestion.focus,
+                            description: suggestion.description
+                        ))) {
+                            VStack(alignment: .leading, spacing: 6) {
+                                HStack {
+                                    Text(suggestion.name)
+                                        .font(.headline)
+                                    Spacer()
+                                    Text(suggestion.difficulty)
+                                        .font(.caption)
+                                        .padding(.horizontal, 10)
+                                        .padding(.vertical, 4)
+                                        .background(Color.blue.opacity(0.12))
+                                        .foregroundColor(.blue)
+                                        .cornerRadius(10)
+                                }
+                                Text(suggestion.focus)
+                                    .font(.subheadline)
+                                    .foregroundColor(.secondary)
+                                Text(suggestion.description)
                                     .font(.caption)
-                                    .padding(.horizontal, 10)
-                                    .padding(.vertical, 4)
-                                    .background(Color.blue.opacity(0.12))
-                                    .foregroundColor(.blue)
-                                    .cornerRadius(10)
+                                    .foregroundColor(.secondary)
                             }
-                            Text(suggestion.focus)
-                                .font(.subheadline)
-                                .foregroundColor(.secondary)
-                            Text(suggestion.description)
-                                .font(.caption)
-                                .foregroundColor(.secondary)
+                            .padding()
+                            .background(Color(.secondarySystemGroupedBackground))
+                            .cornerRadius(14)
                         }
-                        .padding()
-                        .background(Color(.secondarySystemGroupedBackground))
-                        .cornerRadius(14)
+                        .buttonStyle(.plain)
+
+                        Button {
+                            store.addWorkout(
+                                exerciseName: suggestion.name,
+                                sets: 0,
+                                reps: 0,
+                                weight: 0,
+                                duration: 0,
+                                notes: "Added from AI suggestion: \(suggestion.description)"
+                            )
+                        } label: {
+                            Label("Add to Today's Workouts", systemImage: "plus.circle.fill")
+                                .font(.caption)
+                                .frame(maxWidth: .infinity)
+                                .padding(8)
+                                .background(Color.blue.opacity(0.12))
+                                .foregroundColor(.blue)
+                                .clipShape(RoundedRectangle(cornerRadius: 10))
+                        }
+                        .buttonStyle(.plain)
                     }
-                    .buttonStyle(.plain)
                 }
 
                 Button {
