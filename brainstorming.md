@@ -11,37 +11,18 @@
 7. **AquaGuard** — Water intake + hydration reminder app with simple charts and streaks.
 
 ---
-
 ## Top 3 Ideas — Evaluation
-1. FlowFit – Fitness + Nutrition Tracker
-Mobile:  Perfect for quick logging, daily streaks, and on‑the‑go workout tracking.
-Story:  Helps users stay consistent with fitness and nutrition.
-Market:  Students, beginners, and casual fitness users.
-Habit:  Daily meal/workout logging encourages repeat use.
-Scope:  Very feasible for a 4‑week sprint; features can be built incrementally.
-
-2. StudyBuddy – Student Planner
-Mobile:  Students check deadlines and reminders constantly on their phones.
-Story:  Solves the problem of missed assignments and poor organization.
-Market:  High school and college students.
-Habit:  Daily task check‑ins and reminders build habit loops.
-Scope:  Medium; calendar + reminders add complexity but still doable.
-
-3. MoodMate – Mood + Habit Tracker
-Mobile:  Quick daily mood check‑ins are ideal for mobile.
-Story:  Helps users understand emotional patterns and build healthy habits.
-Market:  Anyone interested in mental wellness.
-Habit:  Daily mood logging + streaks encourage consistent use.
-Scope:  Medium; charts require extra work but still manageable.
-
-Final Choice
-We selected FlowFit because it has the best balance of feasibility, clarity, and sprint‑friendly features.
-
 
 ### 1. FlowFit
 
 **Description:**  
 A unified fitness app that combines workout tracking, nutrition logging, and goal‑based suggestions (cutting, bulking, or maintenance).
+
+- Mobile:  Perfect for quick logging, daily streaks, and on‑the‑go workout tracking.
+- Story:  Helps users stay consistent with fitness and nutrition.
+- Market:  Students, beginners, and casual fitness users.
+- Habit:  Daily meal/workout logging encourages repeat use.
+- Scope:  Very feasible for a 4‑week sprint; features can be built incrementally.
 
 **Pros:**
 - Strong real‑world demand (fitness + nutrition is a huge space).
@@ -61,6 +42,13 @@ A unified fitness app that combines workout tracking, nutrition logging, and goa
 **Description:**  
 A study planner that breaks assignments into smaller tasks, schedules them across days, and tracks completion.
 
+- Mobile:  Students check deadlines and reminders constantly on their phones.
+- Story:  Solves the problem of missed assignments and poor organization.
+- Market:  High school and college students.
+- Habit:  Daily task check‑ins and reminders build habit loops.
+- Scope:  Medium; calendar + reminders add complexity but still doable.
+
+
 **Pros:**
 - Very relatable for students.
 - Simple data models (tasks, deadlines, courses).
@@ -78,6 +66,14 @@ A study planner that breaks assignments into smaller tasks, schedules them acros
 **Description:**  
 A mood and habit tracker that lets users log mood, habits, and see correlations over time.
 
+- Mobile:  Quick daily mood check‑ins are ideal for mobile.
+- Story:  Helps users understand emotional patterns and build healthy habits.
+- Market:  Anyone interested in mental wellness.
+- Habit:  Daily mood logging + streaks encourage consistent use.
+- Scope:  Medium; charts require extra work but still manageable.
+
+
+
 **Pros:**
 - Mental health and self‑awareness are strong themes.
 - Interesting data visualization opportunities.
@@ -92,6 +88,9 @@ A mood and habit tracker that lets users log mood, habits, and see correlations 
 ## Final App Idea Chosen
 
 ### ✅ **Chosen App: FlowFit**
+
+Final Choice
+We selected FlowFit because it has the best balance of feasibility, clarity, and sprint‑friendly features.
 
 We chose **FlowFit** because:
 
