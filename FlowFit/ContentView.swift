@@ -34,24 +34,28 @@ struct MainTabView: View {
                 .tabItem {
                     Label("Home", systemImage: "house.fill")
                 }.tag(0)
+                .environmentObject(workoutStore)
  
             // NUTRITION
             NutritionView()
                 .tabItem {
                     Label("Nutrition", systemImage: "fork.knife")
                 }.tag(1)
+                .environmentObject(workoutStore)
  
             // WORKOUTS
             WorkoutsView(store: workoutStore)
                 .tabItem { Label("Workouts", systemImage: "dumbbell.fill")
                 }.tag(2)
+                .environmentObject(workoutStore)
  
             // PROGRESS
-            ProgressView()
+            ProgressDashboardView()
                 .tabItem {
                     Label("Progress", systemImage: "chart.line.uptrend.xyaxis")
                 }
                 .tag(3)
+                .environmentObject(workoutStore)
  
             // PROFILE
             UseProfile()
@@ -59,6 +63,7 @@ struct MainTabView: View {
                     Label("Profile", systemImage: "person.fill")
                 }
                 .tag(4)
+                .environmentObject(workoutStore)
         }
         .tint(.blue)
     }
