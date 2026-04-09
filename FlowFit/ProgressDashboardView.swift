@@ -8,7 +8,7 @@
 import SwiftUI
 import Charts
  
-struct ProgressView: View {
+struct ProgressDashboardView: View {
     @Environment(AppState.self) var appState
     @EnvironmentObject var workoutStore: WorkoutStore
  
@@ -332,7 +332,7 @@ struct WorkoutHistoryRow: View {
 }
  
 #Preview {
-    ProgressView()
+    ProgressDashboardView()
         .environment(AppState())
         .environmentObject(WorkoutStore())
 }

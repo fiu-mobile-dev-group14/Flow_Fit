@@ -151,6 +151,7 @@ struct WorkoutsView: View {
     }
 
     private var suggestedWorkoutsSection: some View {
+        
         VStack(alignment: .leading, spacing: 12) {
             sectionTitle("AI Suggested Workouts")
 

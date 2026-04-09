@@ -26,12 +26,8 @@ struct FlowFitApp: App {
                     .environment(appState)
                     .environmentObject(workoutStore)
             } else {
-                /*
                  LoginView()
                     .environment(appState)
-                 */
-                LoginView()
-                //Place holder for the login view to be default if no user is logged in
             }
         }
     }

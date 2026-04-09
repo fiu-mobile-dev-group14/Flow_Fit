@@ -24,6 +24,9 @@ struct LoginView: View {
     @State private var errorMessage: String? = nil
  
     var body: some View {
+        
+        @EnvironmentObject var workoutStore: WorkoutStore
+        
         NavigationStack {
             ScrollView {
                 VStack(spacing: 24) {
